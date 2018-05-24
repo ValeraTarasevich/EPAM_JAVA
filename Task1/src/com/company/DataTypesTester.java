@@ -127,6 +127,8 @@ public class DataTypesTester {
         float f = 5.4f;
         double db = 5435.345;
         boolean bool = true;
+        String s = "a";
+        Student st = new Student("Valera", 10);
 
         c = (byte) i;
         System.out.printf("byte = int: c = (byte)%d --> c=%d\n",i,c);
@@ -140,6 +142,10 @@ public class DataTypesTester {
         System.out.printf("byte = float: c = (byte)%f --> c=%d\n",f,c);
         c = (byte) db;
         System.out.printf("byte = double: c = (byte)%f --> c=%d\n",db,c);
+            //Compile Error
+        //c =st;
+        //c = s;
+        //c = (byte) bool;
     }
 
     public static void testShort(){
@@ -266,6 +272,8 @@ public class DataTypesTester {
         float f = 5.4f;
         double db = 5435.345;
         boolean bool = true;
+        String s = "a";
+        Student st = new Student("Valera", 10);
 
         c = (short) i;
         System.out.printf("short = int: c = (short)%d --> c=%d\n",i,c);
@@ -279,6 +287,9 @@ public class DataTypesTester {
         System.out.printf("short = float: c = (short)%f --> c=%d\n",f,c);
         c = (short) db;
         System.out.printf("short = double: c = (short)%f --> c=%d\n",db,c);
+        //Compile Error
+        //c =st;
+        //c = s;
         //c = (short) bool;
     }
 
@@ -406,6 +417,8 @@ public class DataTypesTester {
         float f = 5.4f;
         double db = 5435.345;
         boolean bool = true;
+        String s = "a";
+        Student st = new Student("Valera", 10);
 
         c = sh;
         System.out.printf("int = short: c = %d --> c=%d\n",sh,c);
@@ -419,7 +432,10 @@ public class DataTypesTester {
         System.out.printf("int = float: c = (int)%f --> c=%d\n",f,c);
         c = (int) db;
         System.out.printf("int = double: c = (int)%f --> c=%d\n",db,c);
-        //c = (short) bool;
+        //Compile Error
+        //c = s;
+        //c = st;
+        //c = (int) bool;
     }
     public static void testChar(){
             char a = 'b';
@@ -444,18 +460,18 @@ public class DataTypesTester {
 //        System.out.printf("%c / 0 = %c\n", a, c);
 //        c = (char) (a%0);
 //        System.out.printf("%c %% 0 = %c\n", a, c);
-//            c = (char) -a;
-//            System.out.printf("-%c = %c\n", a, c);
-//            c = (char) +a;
-//            System.out.printf("+%c = %c\n", a, c);
-//            a = 6;
-//            System.out.printf("%c++ = %c\n", a, a++);
-//            a = 6;
-//            System.out.printf("++%c = %c\n", a, ++a);
-//            a = 6;
-//            System.out.printf("%c-- = %c\n", a, a--);
-//            a = 6;
-//            System.out.printf("--%c = %c\n", a, --a);
+            c = (char) -a;
+            System.out.printf("-%c = %c\n", a, c);
+            c = (char) +a;
+            System.out.printf("+%c = %c\n", a, c);
+            a = 'a';
+            System.out.printf("%c++ = %c\n", a, a++);
+            a = 'a';
+            System.out.printf("++%c = %c\n", a, ++a);
+            a = 'a';
+            System.out.printf("%c-- = %c\n", a, a--);
+            a = 'a';
+            System.out.printf("--%c = %c\n", a, --a);
 
             a = 'a';
             b = 'd';
@@ -517,15 +533,15 @@ public class DataTypesTester {
 //            System.out.printf("%c == %c --> %b\n", a, b, a==b);
 //            System.out.printf("%c != %c --> %b\n", a, b, a!=b);
 
-//            System.out.println("\n=========LOGICAL OPERATORS=========");
-//            a = 6;
-//            b = 4;
+            System.out.println("\n=========LOGICAL OPERATORS=========");
+//            a = 'a';
+//            b = 'b';
 //            System.out.printf("(%d > %d) && (%d > 0) --> %b\n", a, b, b, (a>b)&&(b>0));
 //            System.out.printf("(%d > %d) & (%d < 0) --> %b\n", a, b, b, (a>b)&(b<0));
 //            System.out.printf("(%d > %d) || (%d < 0) --> %b\n", a, b, a, (a>b)||(a<0));
 //            System.out.printf("(%d < %d) | (%d < 0) --> %b\n", a, b, a, (a<b)|(a<0));
 //            System.out.printf("(%d > %d) ^ (%d < 0) --> %b\n", a, b, a, (a>b)^(a<0));
-//
+
             System.out.println("\n=========MISC OPERATORS=========");
             a = 'f';
             b = 'f';
@@ -540,6 +556,8 @@ public class DataTypesTester {
             float f = 5.4f;
             double db = 5435.345;
             boolean bool = true;
+            String s = "a";
+        Student st = new Student("Valera", 10);
 
             c = (char) i;
             System.out.printf("chart = int: c = (chart)%d --> c=%c\n",i,c);
@@ -553,7 +571,10 @@ public class DataTypesTester {
             System.out.printf("chart = float: c = (chart)%f --> c=%c\n",f,c);
             c = (char) db;
             System.out.printf("chart = double: c = (chart)%f --> c=%c\n",db,c);
-            //c = (short) bool;
+            //Compile Error
+            //c = s;
+        //c = st;
+            //c = (char) bool;
     }
     public static void testLong(){
         long a = 60000000;
@@ -679,6 +700,8 @@ public class DataTypesTester {
         float f = 5.4f;
         double db = 5435.345;
         boolean bool = true;
+        String s = "a";
+        Student st = new Student("Valera", 10);
 
         c = sh;
         System.out.printf("long = short: c = %d --> c=%d\n",sh,c);
@@ -692,7 +715,10 @@ public class DataTypesTester {
         System.out.printf("long = float: c = (long)%f --> c=%d\n",f,c);
         c = (long) db;
         System.out.printf("long = double: c = (long)%f --> c=%d\n",db,c);
-        //c = (short) bool;
+        //Compile Error
+        //c = st;
+        //c = s;
+        //c = (long) bool;
     }
     public static void testFloat(){
         float a = 6.31f;
@@ -817,6 +843,8 @@ public class DataTypesTester {
         //float f = 5.4f;
         double db = 5435.345;
         boolean bool = true;
+        String s = "a";
+        Student st = new Student("Valera", 10);
 
         c = sh;
         System.out.printf("float = short: c = %d --> c=%f\n",sh,c);
@@ -830,7 +858,10 @@ public class DataTypesTester {
         System.out.printf("float = double: c = (float)%f --> c=%f\n",db,c);
         c = i;
         System.out.printf("float = int: c = %d --> c=%f\n",i,c);
-        //c = (short) bool;
+        //Compile Error
+        //c = st;
+        //c = s;
+        //c = (float) bool;
     }
     public static void testDoable(){
         double a = 6.31;
@@ -955,6 +986,8 @@ public class DataTypesTester {
         float f = 5.4f;
         //double db = 5435.345;
         boolean bool = true;
+        String s = "a";
+        Student st = new Student("Valera", 10);
 
         c = sh;
         System.out.printf("double = short: c = %d --> c=%f\n",sh,c);
@@ -968,12 +1001,19 @@ public class DataTypesTester {
         System.out.printf("double = float: c = %f --> c=%f\n",f,c);
         c = i;
         System.out.printf("double = int: c = %d --> c=%f\n",i,c);
-        //c = (short) bool;
+
+
+        //Compile Error
+        //c = st;
+        //c = s;
+        //c = (double) bool;
     }
     public static void testBoolean(){
         boolean a = true;
         boolean b = false;
         boolean c = true;
+        //ARITHMETICAL OPERATION not use
+
         System.out.println("\n=========BITWISE OPERATORS=========");
 
         a = true; b = true;
@@ -1039,6 +1079,209 @@ public class DataTypesTester {
 
         System.out.println("\n=========MISC OPERATORS=========");
         System.out.printf("%b == %b ? %b : %b --> %b\n", a, b, a, b, a==b ? a:b);
+
+        //BOOLEAN cann't be used
+        //c = (boolean) bt;
+        //c = (boolean) sh;
+        //c = (boolean) ch;
+        //c = (boolean) l;
+        //c = (boolean) f;
+        //c = (boolean) d;
+        //c = (boolean) s;
+    }
+
+    public static void testString(){
+        String a = "a";
+        String b = "a";
+        String c;
+
+
+        System.out.println("\n=========ARITHMETICAL OPERATORS=========");
+        c = a+b;
+        System.out.printf("%s + %s = %s\n", a, b, c);
+        //c = a-b;
+        //System.out.printf("%c - %c = %c\n", a, b, c);
+        //c = a*b;
+        //System.out.printf("%c * %c = %c\n", a, b, c);
+        //c =  (a/b);
+        //System.out.printf("%c / %c = %c\n", a, b, c);
+        //c = (a%b);
+        //System.out.printf("%c %% %c = %c\n", a, b ,c);
+
+        //Arithmetical Exception
+//        c = (a/0);
+//        System.out.printf("%c / 0 = %c\n", a, c);
+//        c = (a%0);
+//        System.out.printf("%c %% 0 = %c\n", a, c);
+//        c = -a;
+//        System.out.printf("-%c = %c\n", a, c);
+//        c = +a;
+//        System.out.printf("+%c = %c\n", a, c);
+//        a = "a";
+//        System.out.printf("%c++ = %c\n", a, a++);
+//        a = "a";
+//        System.out.printf("++%c = %c\n", a, ++a);
+//        a = "a";
+//        System.out.printf("%c-- = %c\n", a, a--);
+//        a = "a";
+//        System.out.printf("--%c = %c\n", a, --a);
+//
+//        a = "a";
+//        b = "a";
+//        System.out.println("\n=========BITWISE OPERATORS=========");
+//        c = (a&b);
+//        System.out.printf("%c & %c = %c\n", a, b, c);
+//        System.out.printf("%s & %s = %s\n\n", Integer.toBinaryString(a), Integer.toBinaryString(b), Integer.toBinaryString(c));
+//        c = (a|b);
+//        System.out.printf("%c | %c = %c\n", a, b, c);
+//        System.out.printf("%s | %s = %s\n\n", Integer.toBinaryString(a), Integer.toBinaryString(b), Integer.toBinaryString(c));
+//        c = (a^b);
+//        System.out.printf("%c ^ %c = %c\n", a, b, c);
+//        System.out.printf("%s ^ %s = %s\n\n", Integer.toBinaryString(a), Integer.toBinaryString(b), Integer.toBinaryString(c));
+//        c = ~a;
+//        System.out.printf("~%c = %c\n", a, c);
+//        System.out.printf("~%s = %s\n\n", Integer.toBinaryString(a), Integer.toBinaryString(c));
+//        c =(a >> 1);
+//        System.out.printf("%c >> 1 = %c\n", a, c);
+//        System.out.printf("%s >> 1 = %s\n\n", Integer.toBinaryString(a), Integer.toBinaryString(c));
+//        c =(a << 1);
+//        System.out.printf("%c << 1 = %c\n", a, c);
+//        System.out.printf("%s << 1 = %s\n\n", Integer.toBinaryString(a), Integer.toBinaryString(c));
+//        c =(a >>> 1);
+//        System.out.printf("%c >>> 1 = %c\n", a, c);
+//        System.out.printf("%s >>> 1 = %s\n\n", Integer.toBinaryString(a), Integer.toBinaryString(c));
+
+        System.out.println("\n=========ASSIGNMENT OPERATORS=========");
+        a = "a";
+        c = "b";
+        System.out.printf("%s += %s --> c = %s\n", c, a, c+=a);
+//        System.out.printf("%c -= %c --> c = %c\n", c, a, c-=a);
+//        System.out.printf("%c *= %c --> c = %c\n", c, a, c*=a);
+//        System.out.printf("%c /= %c --> c = %c\n", c, a, c/=a);
+//        System.out.printf("%c %%= %c --> c = %c\n", c, a, c%=a);
+
+//            //Arithmetical Exception
+////        System.out.printf("%d %= 0 --> c = %d\n", c, 0, c%=0);
+////        System.out.printf("%d /= 0 --> c = %d\n", c, 0, c/=0);
+//        c = "a";
+//        System.out.printf("%c &= %c --> c = %c\n", c, a, c&=a);
+//        c = "a";
+//        System.out.printf("%c |= %c --> c = %c\n", c, a, c|=a);
+//        c = "a";
+//        System.out.printf("%c ^= %c --> c = %c\n", c, a, c^=a);
+//        c = "a";
+//        System.out.printf("%c >>= 1 --> c = %c\n", c, c>>=1);
+//        c = "a";
+//        System.out.printf("%c <<= 1 --> c = %c\n", c, c<<=1);
+//        c = "a";
+//        System.out.printf("%c >>>= 1 --> c = %c\n", c, c>>>=1);
+
+            System.out.println("\n=========RELATIONAL OPERATORS=========");
+            a = "a";
+            b = "b";
+//            System.out.printf("%c < %c --> %b\n", a, b, a<b);
+//            System.out.printf("%c <= %c --> %b\n", a, b, a<=b);
+//            System.out.printf("%c > %c --> %b\n", a, b, a>b);
+//            System.out.printf("%c >= %c --> %b\n", a, b, a>=b);
+            System.out.printf("%s == %s --> %b\n", a, b, a==b);
+            System.out.printf("%s != %s --> %b\n", a, b, a!=b);
+
+        System.out.println("\n=========LOGICAL OPERATORS=========");
+            a = "a";
+            b = "b";
+            c = "c";
+            System.out.printf("(%s == %s) && (%s != %s) --> %b\n", a, b, b, c, (a==b)&&(b!=c));
+            System.out.printf("(%s != %s) & (%s != %s) --> %b\n", a, b, b, c, (a!=b)&(b!=c));
+            System.out.printf("(%s == %s) || (%s == %s) --> %b\n", a, b, a, c, (a==b)||(a==c));
+            System.out.printf("(%s != %s) | (%s == %s) --> %b\n", a, b, a, c, (a!=b)|(a==c));
+            System.out.printf("(%s != %s) ^ (%s != %s) --> %b\n", a, b, a, c, (a!=b)^(a!=c));
+
+        System.out.println("\n=========MISC OPERATORS=========");
+        a = "a";
+        b = "b";
+        System.out.printf("%s == %s ? %s : %s --> %s\n", a, b, a, b, a==b ? a:b);
+
+//        System.out.println("\n=========TYPE CAST OPERATORS=========");
+//        byte bt = -20;
+//        int i = 100000;
+//        short sh = -30000;
+//        char ch = 'a';
+//        long lg = 10000000000L;
+//        float f = 5.4f;
+//        double db = 5435.345;
+//        boolean bool = true;
+//        Student st = new Student("Valera", 10);
+
+        //Compile Error
+//        c = i;
+//        System.out.printf("string = int: c = (string)%d --> c=%s\n",i,c);
+//        c = bt;
+//        System.out.printf("string = byte: c = (string)%d --> c=%s\n",bt,c);
+//        c = sh;
+//        System.out.printf("string = char: c = (string)%d --> c=%s\n",sh,c);
+//        c = lg;
+//        System.out.printf("string = long: c = (string)%d --> c=%s\n",lg,c);
+//        c = f;
+//        System.out.printf("string = float: c = (string)%f --> c=%s\n",f,c);
+//        c = db;
+//        System.out.printf("string = double: c = (string)%f --> c=%s\n",db,c);
+//        c = st;
+        //c = (string) bool;
+    }
+    public static  void testStudent(){
+        Student st1 = new Student("Valera", 10);
+        Student st2 = new Student("Pyps", 7);
+        //ARITHMETICAL cann't be used
+        //ASSIGNMENT cann't be used
+        //BITWISE can'nt be used
+
+        System.out.println("\n=========RELATIONAL OPERATORS=========");
+
+        System.out.printf("%s < %s --> %b\n", st1, st2, st1.mark<st2.mark);
+        System.out.printf("%s <= %s --> %b\n", st1, st2, st1.mark<=st2.mark);
+        System.out.printf("%s > %s --> %b\n", st1, st2, st1.mark>st2.mark);
+        System.out.printf("%s >= %s --> %b\n", st1, st2, st1.mark>=st2.mark);
+        System.out.printf("%s == %s --> %b\n", st1, st2, st1.mark==st2.mark);
+        System.out.printf("%s != %s --> %b\n", st1, st2, st1.mark!=st2.mark);
+
+        System.out.println("\n=========LOGICAL OPERATORS=========");
+
+        System.out.printf("(%s == %s) && (%s != %s) --> %b\n", st1, st2, st1, st2, (st1==st2)&&(st1!=st1));
+        System.out.printf("(%s != %s) & (%s != %s) --> %b\n", st1, st2, st1, st2, (st1!=st2)&(st1==st2));
+        System.out.printf("(%s == %s) || (%s == %s) --> %b\n", st1, st2, st1, st2, (st1==st2)||(st1==st2));
+        System.out.printf("(%s != %s) | (%s == %s) --> %b\n", st1, st2, st1, st2, (st1!=st2)|(st1==st2));
+        System.out.printf("(%s != %s) ^ (%s != %s) --> %b\n", st1, st2, st1, st2, (st1!=st2)^(st1!=st2));
+
+        System.out.println("\n=========MISC OPERATORS=========");
+        System.out.printf("%s == %s ? %s : %s --> %s\n", st1, st2, st1, st2, st1==st2 ? st1:st2);
+
+//        System.out.println("\n=========TYPE CAST OPERATORS=========");
+//        byte bt = -20;
+//        int i = 100000;
+//        short sh = -30000;
+//        char ch = 'a';
+//        long lg = 10000000000L;
+//        float f = 5.4f;
+//        double db = 5435.345;
+//        boolean bool = true;
+//          String s = "a"
+//        Student st = new Student("Valera", 10);
+        //Compile Error
+//        c = i;
+//        System.out.printf("student = int: c = %d --> c=%s\n",i,c);
+//        c = bt;
+//        System.out.printf("student = byte: c = %d --> c=%s\n",bt,c);
+//        c = sh;
+//        System.out.printf("student = char: c = %d --> c=%s\n",sh,c);
+//        c = lg;
+//        System.out.printf("student = long: c = %d --> c=%s\n",lg,c);
+//        c = f;
+//        System.out.printf("student = float: c = %f --> c=%s\n",f,c);
+//        c = db;
+//        System.out.printf("student = double: c = %f --> c=%s\n",db,c);
+        //c = st;
+        //c = s;
+        //c = bool;
 
     }
 }
