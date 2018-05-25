@@ -1,6 +1,6 @@
 package by.epam.java;
 
-import java.lang.reflect.Field;
+import java.util.Scanner;
 
 public class Main {
 
@@ -21,13 +21,12 @@ public class Main {
 
         //f = Function.differentOrSameNumber(a,b,c);
         //f = Function.differentOrSameNumber(aa,bb,cc);
-        f = Function.differentOrSameNumber(fa,fb,fc);
-        if (f){
+        f = Function.differentOrSameNumber(fa, fb, fc);
+        if (f) {
             //System.out.println("Different number: "+ a + " " + b + " " + c);
             //System.out.println("Different number: "+ aa + " " + bb + " " + cc);
-            System.out.println("Different number: "+ fa + " " + fb + " " + fc);
-        }
-        else {
+            System.out.println("Different number: " + fa + " " + fb + " " + fc);
+        } else {
             //System.out.println("Same number: " + a + " " + b + " " + c);
             //System.out.println("Same number: " + aa + " " + bb + " " + cc);
             System.out.println("Same number: " + fa + " " + fb + " " + fc);
@@ -48,12 +47,28 @@ public class Main {
 
         System.out.println("=================================================");
 
-        double r1 = 3;
-        double r2 = 4;
+        double r1 = 3.2;
+        double r2 = 4.1;
         double result;
         result = Function.squareRing(r1, r2);
         System.out.println("Square ring = " + result);
 
-    }
+        System.out.println("==========================================");
 
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter number please: ");
+//        int number1 = sc.nextInt();
+        int number = 5489;
+        boolean flag;
+        flag = Function.increaseNumber(number);
+        if (flag){
+            System.out.println("IncreaseNumber: " + number);
+        }
+        else {
+            System.out.println("DecreaseNumber: " + number);
+        }
+
+        System.out.println("================================================");
+
+    }
 }

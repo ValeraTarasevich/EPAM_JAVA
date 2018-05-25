@@ -97,6 +97,20 @@ public class Function {
         }
         return s;
     }
+    //=======================================================
+    public static boolean increaseNumber(int number){
+        int a, b, c, d;
+        a = number/1000;
+        b = (number/100)%10;
+        c = (number/10)%10;
+        d = number%10;
+        if ((a<b) && (b<c) && (c<d)){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
 
 }
