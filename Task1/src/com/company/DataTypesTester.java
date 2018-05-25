@@ -737,11 +737,10 @@ public class DataTypesTester {
         c = a%b;
         System.out.printf("%f %% %f = %f\n", a, b ,c);
 
-        //Arithmetical Exception
-//        c = (byte) (a/0);
-//        System.out.printf("%d / 0 = %d\n", a, c);
-//        c = (byte) (a%0);
-//        System.out.printf("%d %% 0 = %d\n", a, c);
+        c = a/0;
+        System.out.printf("%f / 0 = %f\n", a, c);
+        c = a%0;
+        System.out.printf("%f %% 0 = %f\n", a, c);
         c = -a;
         System.out.printf("-%f = %f\n", a, c);
         c = +a;
@@ -795,9 +794,10 @@ public class DataTypesTester {
         System.out.printf("%f /= %f --> c = %f\n", c, a, c/=a);
         System.out.printf("%f %%= %f --> c = %f\n", c, a, c%=a);
 
-        //Arithmetical Exception
-//        System.out.printf("%d %= 0 --> c = %d\n", c, 0, c%=0);
-//        System.out.printf("%d /= 0 --> c = %d\n", c, 0, c/=0);
+        System.out.println("a /= 0 -->");
+        System.out.println(a/=0);
+        System.out.println("a %= 0 -->");
+        System.out.println(a%=0);
 
 //        c = 6.5;
 //        System.out.printf("%f &= %f --> c = %f\n", c, a, c&=a);
@@ -880,11 +880,10 @@ public class DataTypesTester {
         c = a%b;
         System.out.printf("%f %% %f = %f\n", a, b ,c);
 
-        //Arithmetical Exception
-//        c = (byte) (a/0);
-//        System.out.printf("%d / 0 = %d\n", a, c);
-//        c = (byte) (a%0);
-//        System.out.printf("%d %% 0 = %d\n", a, c);
+        c = a/0;
+        System.out.printf("%f / 0 = %f\n", a, c);
+        c = a%0;
+        System.out.printf("%f %% 0 = %f\n", a, c);
         c = -a;
         System.out.printf("-%f = %f\n", a, c);
         c = +a;
@@ -938,9 +937,10 @@ public class DataTypesTester {
         System.out.printf("%f /= %f --> c = %f\n", c, a, c/=a);
         System.out.printf("%f %%= %f --> c = %f\n", c, a, c%=a);
 
-        //Arithmetical Exception
-//        System.out.printf("%d %= 0 --> c = %d\n", c, 0, c%=0);
-//        System.out.printf("%d /= 0 --> c = %d\n", c, 0, c/=0);
+        System.out.println("a /= 0 -->");
+        System.out.println(a/=0);
+        System.out.println("a %= 0 -->");
+        System.out.println(a%=0);
 
 //        c = 6.5;
 //        System.out.printf("%f &= %f --> c = %f\n", c, a, c&=a);

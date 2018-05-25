@@ -7,11 +7,11 @@ public class Main {
         //DataTypesTester.testShort();
         //DataTypesTester.testInt();
         //DataTypesTester.testChar();
-        //DataTypesTester.testDoable();
-        //DataTypesTester.testFloat();
+        DataTypesTester.testDoable();
+        DataTypesTester.testFloat();
         //DataTypesTester.testBoolean();
         //DataTypesTester.testLong();
         //DataTypesTester.testString();
-        DataTypesTester.testStudent();
+        //DataTypesTester.testStudent();
     }
 }
