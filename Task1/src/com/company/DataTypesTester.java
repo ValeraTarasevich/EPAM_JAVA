@@ -166,9 +166,9 @@ public class DataTypesTester {
         System.out.printf("%d %% %d = %d\n", a, b ,c);
 
         //Arithmetical Exception
-//        c = (byte) (a/0);
+//        c = (short) (a/0);
 //        System.out.printf("%d / 0 = %d\n", a, c);
-//        c = (byte) (a%0);
+//        c = (short) (a%0);
 //        System.out.printf("%d %% 0 = %d\n", a, c);
         c = (short) -a;
         System.out.printf("-%d = %d\n", a, c);
@@ -311,9 +311,9 @@ public class DataTypesTester {
         System.out.printf("%d %% %d = %d\n", a, b ,c);
 
         //Arithmetical Exception
-//        c = (byte) (a/0);
+//        c = a/0;
 //        System.out.printf("%d / 0 = %d\n", a, c);
-//        c = (byte) (a%0);
+//        c = a%0;
 //        System.out.printf("%d %% 0 = %d\n", a, c);
         c = -a;
         System.out.printf("-%d = %d\n", a, c);
@@ -594,9 +594,9 @@ public class DataTypesTester {
         System.out.printf("%d %% %d = %d\n", a, b ,c);
 
         //Arithmetical Exception
-//        c = (byte) (a/0);
+//        c = (long) (a/0);
 //        System.out.printf("%d / 0 = %d\n", a, c);
-//        c = (byte) (a%0);
+//        c = (long) (a%0);
 //        System.out.printf("%d %% 0 = %d\n", a, c);
         c = -a;
         System.out.printf("-%d = %d\n", a, c);
