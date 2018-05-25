@@ -1,32 +1,29 @@
 package by.epam.java;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Function {
 
     public static boolean differentOrSameNumber(double a, double b, double c){
         if ((a == b) && (a == c)){
-            return false;
+            return true;
         }
         else{
-            return true;
+            return false;
         }
     }
     public static boolean differentOrSameNumber(int a, int b, int c){
         if ((a == b) && (a == c)){
-            return false;
+            return true;
         }
         else{
-            return true;
+            return false;
         }
     }
     public static boolean differentOrSameNumber(float a, float b, float c){
         if ((a == b) && (a == c)){
-            return false;
+            return true;
         }
         else{
-            return true;
+            return false;
         }
     }
     //====================================================================
@@ -111,7 +108,39 @@ public class Function {
             return false;
         }
     }
-
+    //========================================================
+    public static double arithmeticMedium(int number){
+        double sum = 0, count = 0;
+        while (number != 0){
+            sum+=number%10;
+            number/=10;
+            count++;
+        }
+        return sum/count;
+    }
+    public static double geometricMedium(int number){
+        double mult = 1, count = 0;
+        while (number != 0){
+            mult*=number%10;
+            number/=10;
+            count++;
+        }
+        return Math.pow(mult, 1/count);
+    }
+    //========================================================
+    public static void reverseNumber(int number){
+        while (number != 0){
+            System.out.print(number%10);
+            number/=10;
+        }
+    }
+    //========================================================
+    public static void swap(int a, int b) {
+        a += b;
+        b=a-b;
+        a=a-b;
+        System.out.println("Number1 = " + a + "\tNumber2 = " + b);
+    }
 
 }
 
