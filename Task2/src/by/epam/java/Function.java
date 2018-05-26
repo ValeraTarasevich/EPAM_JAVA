@@ -27,6 +27,22 @@ public class Function {
         }
     }
     //====================================================================
+    public static double countMiligram(double a){
+        double miliGram;
+        miliGram = a * Math.pow(10,6);
+        return miliGram;
+    }
+    public static double countGram(double a){
+        double gram;
+        gram = a * Math.pow(10,3);
+        return gram;
+    }
+    public static double countTon(double a){
+        double ton;
+        ton = a * Math.pow(10,-3);
+        return ton;
+    }
+
     public static double[] countKilo(double a){
         double miliGram;
         double gram;

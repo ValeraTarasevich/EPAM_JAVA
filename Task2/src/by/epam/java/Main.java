@@ -32,6 +32,12 @@ public class Main {
         }
         System.out.println("\n===================Main#2==============================");
 
+        double numberMain2 = 5.3;
+        System.out.println("Number (kilo): " + numberMain2 +
+                "\n\tMiligram --> " + Function.countMiligram(numberMain2) +
+                "\n\tGram --> " + Function.countGram(numberMain2) +
+                "\n\tTon --> " + Function.countTon(numberMain2));
+
         double[] mass = Function.countKilo(a);
         System.out.println("Conversion from Kilo (double) --> miligram, gram, ton");
         System.out.println(a + " --> " + mass[0] + "\t" + mass[1] + "\t" + mass[2]);
