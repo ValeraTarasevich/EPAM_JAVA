@@ -1,16 +1,14 @@
 package by.epam.java;
 
 public class Vowel {
-    public static void checkVowel(char letter){
+    public static boolean checkVowel(char letter){
         if (letter=='a' || letter=='e' || letter=='y' || letter=='u' || letter=='i' || letter=='0' ||
                 letter=='A' || letter=='E' || letter=='Y' || letter=='U' || letter=='I' || letter=='O'){
-            System.out.println("The letter '" + letter + "' is vowel.");
+            return true;
         }
-        else{
-            System.out.println("The letter '" + letter + "' is consonant.");
-        }
+        return false;
     }
-    public static void checkVowelTwo(char letter){
+    public static boolean checkVowelTwo(char letter){
         switch (letter){
             case 'a':
             case 'e':
@@ -23,28 +21,24 @@ public class Vowel {
             case 'U':
             case 'I':
             case 'O':
-            case 'o': System.out.println("The letter '" + letter + "' is vowel."); break;
-            default: System.out.println("The letter '" + letter + "' is consonant."); break;
+            case 'o': return true;
+            default: return false;
         }
     }
-    public static void checkVowelThree(String letter){
+    public static boolean checkVowelThree(String letter){
         String elements = "EeYyUuIiOoAa";
         if (elements.contains(letter)){
-            System.out.println("The letter '" + letter + "' is vowel.");
+            return true;
         }
-        else {
-            System.out.println("The letter '" + letter + "' is consonant.");
-        }
+        return false;
     }
-    public static void checkVowelFour(String letter) {
+    public static boolean checkVowelFour(String letter) {
         String e = "e", y = "y", u = "u", i = "i", o = "o", a = "a";
-        String E = "E", Y = "Y", U = "U", I = "I", O = "O", A = "A";
+        String str1 = "E", str2 = "Y", str3 = "U", str4 = "I", str5 = "O", str6 = "A";
         if (e.equals(letter) || y.equals(letter) || u.equals(letter) || i.equals(letter) || o.equals(letter) || a.equals(letter) ||
-                E.equals(letter) || Y.equals(letter) || U.equals(letter) || I.equals(letter) || O.equals(letter) || A.equals(letter)){
-            System.out.println("The letter '" + letter + "' is vowel.");
+                str1.equals(letter) || str2.equals(letter) || str3.equals(letter) || str4.equals(letter) || str5.equals(letter) || str6.equals(letter)){
+            return true;
         }
-        else {
-            System.out.println("The letter '" + letter + "' is consonant.");
-        }
+        return false;
     }
 }
