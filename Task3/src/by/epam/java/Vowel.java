@@ -2,12 +2,36 @@ package by.epam.java;
 
 public class Vowel {
     public static boolean checkVowel(char letter){
-        if (letter=='a' || letter=='e' || letter=='y' || letter=='u' || letter=='i' || letter=='0' ||
+        if (letter=='a' || letter=='e' || letter=='y' || letter=='u' || letter=='i' || letter=='o' ||
                 letter=='A' || letter=='E' || letter=='Y' || letter=='U' || letter=='I' || letter=='O'){
             return true;
         }
         return false;
     }
+
+    public static boolean checkVowelCharTwo(char letter){
+        if (letter=='a' || letter=='A'){
+            return true;
+        }
+        else if (letter=='e' || letter=='E'){
+            return true;
+        }
+        else if (letter=='y' || letter=='Y'){
+            return true;
+        }
+        else if (letter=='u' || letter=='U'){
+            return true;
+        }
+        else if (letter=='i' || letter=='I'){
+            return true;
+        }
+        else if (letter=='o' || letter=='O'){
+            return true;
+        }
+        return false;
+    }
+
+
     public static boolean checkVowelTwo(char letter){
         switch (letter){
             case 'a':

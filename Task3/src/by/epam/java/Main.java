@@ -44,13 +44,21 @@ public class Main {
         char symbol = 'a';
         char symbol2 = 'b';
         char symbol3 = 'U';
-        boolean flag, flagTwo, flagThree, flagFour;
+        boolean flag, flagTwo, flagThree, flagFour , flagFive;
         flag = Vowel.checkVowel(symbol);
         if(flag){
             System.out.println("The letter '" + symbol + "' is vowel.");
         }
         else{
             System.out.println("The letter '" + symbol + "' is consonant.");
+        }
+
+        flagFive = Vowel.checkVowelCharTwo(symbol3);
+        if(flagFive){
+            System.out.println("The letter '" + symbol3 + "' is vowel.");
+        }
+        else{
+            System.out.println("The letter '" + symbol3 + "' is consonant.");
         }
 
         flagTwo =  Vowel.checkVowelTwo(symbol2);
@@ -134,5 +142,20 @@ public class Main {
         }
 
         System.out.println("================Main # 5=============");
+        int day = 31, month = 11, year = 2018; // because month 11 have max 30 days
+        String date = Calendar.findNextDay(day, month, year);
+        if (date == null){
+            System.out.println("Incorrect number.");
+        }
+        else {
+            System.out.println(date);
+        }
+
+        int day1 = 28, month1 = 2, year1 = 2018;
+        System.out.println(Calendar.findNextDay(day1, month1, year1));
+        int day2 = 29, month2 = 2, year2 = 2016;
+        System.out.println(Calendar.findNextDay(day2, month2, year2));
+        int day3 = 31, month3 = 12, year3 = 2018;
+        System.out.println(Calendar.findNextDay(day3, month3, year3));
     }
 }
