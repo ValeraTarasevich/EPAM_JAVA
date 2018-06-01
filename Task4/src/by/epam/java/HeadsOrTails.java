@@ -11,19 +11,16 @@ public class HeadsOrTails {
         return rand.nextInt(RANDOM_RANGE);
     }
 
-    public static String calcHeadsOrTails(int number){
-        int heads = 0, tails = 0;
+    public static int calcHeadsOrTails(int number){
+        int heads = 0;
+        int rand;
         while(number != 0){
-            int rand = random();
+            rand = random();
             if (rand == 0){
                 heads++;
-                number--;
             }
-            else {
-                tails++;
-                number--;
-            }
+            number--;
         }
-        return heads + " : " + tails;
+        return heads;
     }
 }
