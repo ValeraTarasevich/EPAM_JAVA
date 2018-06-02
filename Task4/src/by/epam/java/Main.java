@@ -15,34 +15,40 @@ public class Main {
         int nPalindrome = 5402045;
         boolean flag = ArithmeticFunction.checkPalindrome(nPalindrome);
         if (flag){
-            System.out.println("Number " + nPalindrome + " is Palindrome!");
+            System.out.println("----------\nNumber " + nPalindrome + " is Palindrome!");
         }
         else{
-            System.out.println("Number " + nPalindrome + " isn't Palindrome!");
+            System.out.println("----------\nNumber " + nPalindrome + " isn't Palindrome!");
         }
 //----------------
         int simple = 23;
         boolean flagSimple = ArithmeticFunction.checkSimpleNumber((simple));
         if (flagSimple){
-            System.out.println("Number " + simple + " is simple!!");
+            System.out.println("----------\nNumber " + simple + " is simple!!");
         }
         else{
-            System.out.println("Number " + simple + " isn't simple!!");
+            System.out.println("----------\nNumber " + simple + " isn't simple!!");
         }
 //----------------
         int nDivider = 45;
-        System.out.println("Number " + nDivider + " have simple divider: " + ArithmeticFunction.findAllSimpleDivider(nDivider));
+        System.out.println("----------\nNumber " + nDivider + " have simple divider: " + ArithmeticFunction.findAllSimpleDivider(nDivider));
 //----------------
         int nFirst = 4;
         int nSecond = 10;
-        System.out.println("Numbers: " + nFirst + " " + nSecond + "\n" + ArithmeticFunction.calcNODandNOK(nFirst,nSecond));
+        System.out.println("----------\nNumbers: " + nFirst + " " + nSecond + "\n" + ArithmeticFunction.calcNODandNOK(nFirst,nSecond));
 //----------------
         int numDiff = 11223;
-        System.out.println("Number " + numDiff + " have " + ArithmeticFunction.calcDifferentNumber(numDiff) + " different number!");
+        System.out.println("----------\nNumber " + numDiff + " have " + ArithmeticFunction.calcDifferentNumber(numDiff) + " different number!");
 
         System.out.println("===============Main #3==============");
-
-
+        int nPerfect = 496;
+        boolean flagPerfect = PerfectNumber.findPerfectNumber(nPerfect);
+        if  (flagPerfect) {
+            System.out.println("Number " + nPerfect + " is Perfect Number!!");
+        }
+        else {
+            System.out.println("Number " + nPerfect + " isn't Perfect Number!!");
+        }
 
     }
 }

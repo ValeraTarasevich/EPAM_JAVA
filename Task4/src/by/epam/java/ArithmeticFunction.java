@@ -75,7 +75,6 @@ public class ArithmeticFunction {
     public static int calcDifferentNumber(int number){
         int tmp, tmp2, count = 0;
         int newNum;
-        //10342
         while (number != 0){
             count++;
             tmp = number % NUMBER_DIVIDER;
