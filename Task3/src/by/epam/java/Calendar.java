@@ -14,11 +14,14 @@ public class Calendar {
     private static final int STEP_FIND_USUAL_YEAR = 100;
     private static final int STEP_FIND_LEAP_YEAR = 400;
 
+    private static final int NUMBER_DIVIDER_2 = 2;
+
 
     public static String findNextDay(int day, int month, int year){
 
         boolean flag = checkYear(year);
-        if (((month <= AUGUST) && (month % 2 == 1)) || ((month > AUGUST) && (month % 2 == 0) && (month != LAST_MONTH))) {
+        if (((month <= AUGUST) && (month % NUMBER_DIVIDER_2 == 1))
+                || ((month > AUGUST) && (month % NUMBER_DIVIDER_2 == 0) && (month != LAST_MONTH))) {
             if ((day > FIRST_DAY) && (day < MAX_DAYS_IN_BIG_MONTH)){
                 day++;
             }
@@ -29,7 +32,8 @@ public class Calendar {
                 return null;
             }
         }
-        else if (((month <= AUGUST) && (month % 2 == 0) && (month != FEBRUARY)) || ((month > AUGUST) && (month % 2 == 1))) {
+        else if (((month <= AUGUST) && (month % NUMBER_DIVIDER_2 == 0) && (month != FEBRUARY))
+                || ((month > AUGUST) && (month % NUMBER_DIVIDER_2 == 1))) {
             if ((day > FIRST_DAY) && (day < MAX_DAYS_IN_SMALL_MONTH)){
                 day++;
             }
@@ -85,16 +89,18 @@ public class Calendar {
         return day + "-" + month + "-" + year;
     }
 
+
     public static boolean checkYear(int year){
+        boolean flag = false;
         if (year % STEP_LEAP_YEAR == 0){
             if (year % STEP_FIND_USUAL_YEAR == 0){
                 if (year % STEP_FIND_LEAP_YEAR == 0){
-                    return true;
+                    flag = true;
                 }
-                return false;   //usual
+                flag = false;   //usual
             }
-            return true;
+            flag = true;
         }
-        return false; //usual
+        return flag; //usual
     }
 }
