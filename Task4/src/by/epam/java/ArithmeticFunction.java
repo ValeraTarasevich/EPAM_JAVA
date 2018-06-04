@@ -2,16 +2,17 @@ package by.epam.java;
 
 public class ArithmeticFunction {
 
-    private static final int NUMBER_DIVIDER = 10;
+    private static final int NUMBER_DIVIDER_10 = 10;
+    private static final int NUMBER_DIVIDER_2 = 2;
 
     public static int findMaxNumber(int number){
         int tmp, max = 0;
         while (number != 0){
-            tmp = number % NUMBER_DIVIDER;
+            tmp = number % NUMBER_DIVIDER_10;
             if (tmp > max){
                 max = tmp;
             }
-            number /= NUMBER_DIVIDER;
+            number /= NUMBER_DIVIDER_10;
         }
         return max;
     }
@@ -20,17 +21,14 @@ public class ArithmeticFunction {
         int oldNumber = number;
         int reverseNumber = 0;
         while(number != 0){
-            reverseNumber = reverseNumber * NUMBER_DIVIDER + (number % NUMBER_DIVIDER);
-            number /= NUMBER_DIVIDER;
+            reverseNumber = reverseNumber * NUMBER_DIVIDER_10 + (number % NUMBER_DIVIDER_10);
+            number /= NUMBER_DIVIDER_10;
         }
-        if (reverseNumber == oldNumber){
-            return true;
-        }
-        return false;
+        return reverseNumber == oldNumber;
     }
 
     public static boolean checkSimpleNumber(int number) {
-        for (int i = 2; i <= number/2; i++) {
+        for (int i = 2; i <= number / NUMBER_DIVIDER_2; i++) {
             if (number % i == 0) {
                 return false;
             }
@@ -40,7 +38,7 @@ public class ArithmeticFunction {
 
     public static String findAllSimpleDivider(int number){
         String str = "";
-        for (int i = 2; i <= number/2; i++) {
+        for (int i = 2; i <= number / NUMBER_DIVIDER_2; i++) {
             if (number % i == 0) {
                 if(checkSimpleNumber(i)) {
                     str += i + " ";
@@ -77,16 +75,16 @@ public class ArithmeticFunction {
         int newNum;
         while (number != 0){
             count++;
-            tmp = number % NUMBER_DIVIDER;
-            number /= NUMBER_DIVIDER;
+            tmp = number % NUMBER_DIVIDER_10;
+            number /= NUMBER_DIVIDER_10;
             newNum = number;
             while(newNum != 0){
-                tmp2 = newNum % NUMBER_DIVIDER;
+                tmp2 = newNum % NUMBER_DIVIDER_10;
                 if (tmp == tmp2){
                     count--;
                     break;
                 }
-                newNum /= NUMBER_DIVIDER;
+                newNum /= NUMBER_DIVIDER_10;
             }
         }
         return count;
