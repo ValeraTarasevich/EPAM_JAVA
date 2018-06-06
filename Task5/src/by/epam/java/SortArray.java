@@ -2,17 +2,28 @@ package by.epam.java;
 
 public class SortArray {
 
+    private static final int STEP_SIZE = 1;
+    private static final int STEP = 1;
+
     public static boolean checkSortArrayIncrease(double[] array){
-        for (int i = 0; i < array.length-1; i++){
-           return array[i] < array[i + 1];
+        boolean flag = true;
+        for (int i = 0; i < array.length - STEP_SIZE; i++){
+           if(!(array[i] < array[i + STEP])){
+               flag = false;
+               break;
+           }
         }
-        return false;
+        return flag;
     }
 
     public static boolean checkSortArrayDecrease(double[] array){
-        for (int i = 0; i < array.length-1; i++){
-            return array[i] > array[i + 1];
+        boolean flag = true;
+        for (int i = 0; i < array.length - STEP_SIZE; i++){
+            if(!(array[i] > array[i + STEP])){
+                flag = false;
+                break;
+            }
         }
-        return false;
+        return flag;
     }
 }

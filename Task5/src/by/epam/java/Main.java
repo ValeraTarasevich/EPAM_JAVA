@@ -7,7 +7,6 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("============Main # 1==============");
-
         double[] array = {11, -34, 3.5, -5.3, 10.3, 10.39, 10.9, 1};
         System.out.println("Array: " + Arrays.toString(array));
         System.out.println("Max element: " + ExtremeValue.findMaxElement(array));
@@ -18,15 +17,15 @@ public class Main {
         System.out.printf("Average Arithmetic: %f\n", AverageValue.findAverageArithmetic(arr));
         System.out.println("Average Geometric: " + AverageValue.findAverageGeometric(arr));
         double[] arr2 = {2, -4, 0.5};
-        // if array have elements < 0 --> return 0
+        // if array have elements < 0 --> return -1
         System.out.println("Average Geometric: " + AverageValue.findAverageGeometricTwo(arr2));
         double[] arr3 = {10, -4, -3, -2, -3};
         System.out.println("Average Geometric: " + AverageValue.findAverageGeometricThree(arr3));
 
         System.out.println("============Main # 3==============");
-        double[] arr4 = {-34, 10, 12, 13, 44};
+        double[] arr4 = {-34, 11, 12, 13, 44};
         System.out.println(SortArray.checkSortArrayIncrease(arr4));
-        double[] arr5 = {41.4, 40, 12.4, 12.2, 0, -4.5};
+        double[] arr5 = {41.4, 40, 12.4, 11, 0, -4.5};
         System.out.println(SortArray.checkSortArrayDecrease(arr5));
 
         System.out.println("============Main # 4==============");

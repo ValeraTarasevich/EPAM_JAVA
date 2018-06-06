@@ -2,15 +2,18 @@ package by.epam.java;
 
 public class ReverseElementsArray {
 
+    private static final int STEP_SIZE= 1;
+    private static final int STEP = 1;
+
+
     public static double[] reverseElementOfArray(double[] array) {
         final int LEN = array.length;
         final int NUMBER_DIVIDER = 2;
-        final int FIND_SECOND_ELEMENT = 1;
 
         for (int i = 0; i < (LEN / NUMBER_DIVIDER); i++) {
-            array[i] += array[LEN - FIND_SECOND_ELEMENT - i];
-            array[LEN - FIND_SECOND_ELEMENT - i] = array[i] - array[LEN - FIND_SECOND_ELEMENT - i];
-            array[i] -= array[LEN - FIND_SECOND_ELEMENT - i];
+            array[i] += array[LEN - STEP - i];
+            array[LEN - STEP - i] = array[i] - array[LEN - STEP - i];
+            array[i] -= array[LEN - STEP - i];
         }
         return array;
     }
@@ -18,7 +21,7 @@ public class ReverseElementsArray {
 
     public static String reverseElemOfArrayTwo(double[] array){
         String str = "";
-        for(int i = array.length - 1; i >= 0; i--){
+        for(int i = array.length - STEP_SIZE; i >= 0; i--){
             str += array[i] + " ";
         }
         return str;
