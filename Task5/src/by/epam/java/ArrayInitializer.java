@@ -6,10 +6,17 @@ public class ArrayInitializer {
 
     private static final int STEP = 1;
 
-    public static void randomArray(int[] array, int min, int max){
+    public static void randomArray(double[] array, int min, int max){
+        checkArray(array);
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(max - min + STEP) + min;
+            array[i] = min + (random.nextDouble() * (max - min));
+        }
+    }
+
+    private static void checkArray(double[] array){
+        if(array == null || array.length == 0){
+            throw new ArrayIndexOutOfBoundsException("Empty array");
         }
     }
 

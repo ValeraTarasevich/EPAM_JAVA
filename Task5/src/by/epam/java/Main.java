@@ -7,7 +7,8 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("============Main # 1==============");
-        double[] array = {11, -34, 3.5, -5.3, 10.3, 10.39, 10.9, 1};
+        double[] array = new double[3];
+        ArrayInitializer.randomArray(array, -5, 5);
         System.out.println("Array: " + Arrays.toString(array));
         System.out.println("Max element: " + ExtremeValue.findMaxElement(array));
         System.out.println("Min element: " + ExtremeValue.findMinElement(array));
@@ -19,7 +20,7 @@ public class Main {
         double[] arr2 = {2, -4, 0.5};
         // if array have elements < 0 --> return -1
         System.out.println("Average Geometric: " + AverageValue.findAverageGeometricTwo(arr2));
-        double[] arr3 = {10, -4, -3, -2, -3};
+        double[] arr3 = {1, 4, 3, -2, -3};
         System.out.println("Average Geometric: " + AverageValue.findAverageGeometricThree(arr3));
 
         System.out.println("============Main # 3==============");
@@ -29,14 +30,17 @@ public class Main {
         System.out.println(SortArray.checkSortArrayDecrease(arr5));
 
         System.out.println("============Main # 4==============");
-        double[] arr6 = {1.4, 12.3, 10.2, 10.3, 9, 11};
+        double[] arr6 = {1, 2, 5, 3, 4};
         System.out.println("Position the first local min: " + FirstLocalMinMax.findPositionFirstMin(arr6));
         System.out.println("Position the first local max: " + FirstLocalMinMax.findPositionFirstMax(arr6));
 
         System.out.println("============Main # 5==============");
-        double[] arr7 = {2.4, 3.3, 4.2, 14, 4.3};
+        double[] arr7 = new double[5];
+        ArrayInitializer.randomArray(arr7, -5, 5);
+        System.out.println("Array before: " + Arrays.toString(arr7));
         System.out.println("Reverse array: " + ReverseElementsArray.reverseElemOfArrayTwo(arr7));
-        System.out.println("Reverse array: " + Arrays.toString(ReverseElementsArray.reverseElementOfArray(arr7)));
+        ReverseElementsArray.reverseElementOfArray(arr7);
+        System.out.println("Reverse array: " + Arrays.toString(arr7));
 
     }
 }
