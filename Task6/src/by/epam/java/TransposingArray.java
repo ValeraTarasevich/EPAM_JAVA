@@ -2,18 +2,16 @@ package by.epam.java;
 
 public class TransposingArray {
 
-    private static final int COUNT_ROW_COLUMN = 3;
-
-    public static double[][] transposArray(double[][] array) {
-
-        for (int i = 0; i < COUNT_ROW_COLUMN; i++) {
-            for (int j = COUNT_ROW_COLUMN - 1; j > i; j--) {
-                array[i][j] += array[j][i];
-                array[j][i] = array[i][j] - array[j][i];
-                array[i][j] -= array[j][i];
+    public static void transposArray(double[][] array) {
+        if(array.length == array[0].length) {
+            for (int i = 0; i < array.length; i++) {
+                for (int j = array[i].length - 1; j > i; j--) {
+                    array[i][j] += array[j][i];
+                    array[j][i] = array[i][j] - array[j][i];
+                    array[i][j] -= array[j][i];
+                }
             }
         }
-        return array;
     }
 }
 
