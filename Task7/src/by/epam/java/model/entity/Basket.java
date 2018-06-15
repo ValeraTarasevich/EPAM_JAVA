@@ -1,9 +1,14 @@
 package by.epam.java.model.entity;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Basket {
 
+    private static final int PRIME_NUMBER = 31;
     private Product[] products;
     private int size;
+
 
 
     public Basket(int size) {
@@ -68,6 +73,24 @@ public class Basket {
             return products[index];
         }
         throw new NullPointerException("Incorrect index at getElement");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        if (getClass() != o.getClass()) return false;
+        Basket basket = (Basket) o;
+        return size == basket.size &&
+                Arrays.equals(products, basket.products);
+    }
+
+    @Override
+    public int hashCode() {
+
+        int result = Objects.hash(size);
+        result = PRIME_NUMBER * result + Arrays.hashCode(products);
+        return result;
     }
 
     public String toString() {

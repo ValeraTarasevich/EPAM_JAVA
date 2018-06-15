@@ -1,9 +1,11 @@
 package by.epam.java.model.entity;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class TruckShop {
 
+    private static final int PRIME_NUMBER = 31;
     private Product[] products;
     private int size;
 
@@ -69,6 +71,24 @@ public class TruckShop {
             return products[index];
         }
         throw new NullPointerException("Incorrect index at getElement");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        if (getClass() != o.getClass()) return false;
+        TruckShop truckShop = (TruckShop) o;
+        return size == truckShop.size &&
+                Arrays.equals(products, truckShop.products);
+    }
+
+    @Override
+    public int hashCode() {
+
+        int result = Objects.hash(size);
+        result = PRIME_NUMBER * result + Arrays.hashCode(products);
+        return result;
     }
 
     public String toString() {

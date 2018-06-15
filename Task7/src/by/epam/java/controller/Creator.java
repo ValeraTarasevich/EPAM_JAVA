@@ -1,10 +1,13 @@
 package by.epam.java.controller;
 
 import by.epam.java.model.entity.*;
+import by.epam.java.model.entity.Robot;
 import by.epam.java.model.logic.Logic;
+import by.epam.java.model.logic.Search;
 import by.epam.java.model.logic.Sort;
 import by.epam.java.util.impl.SortByPrice;
 
+import java.awt.*;
 import java.util.Arrays;
 import java.util.TreeSet;
 
@@ -165,7 +168,7 @@ public class Creator {
     }
 
 
-    public static void sortProductByPice(){
+    public static void sortProductByPrice(){
 
         Car car = new Car(56.4, "plastic", "red", "sedan", 200);
         Car car2 = new Car(199.9, "plastic", "black", "speedcar", 320);
@@ -206,7 +209,23 @@ public class Creator {
             System.out.println(p.getPrice());
         }
 
+    }
 
+    public static void serchProducts(){
+
+        Car car = new Car(56.4, "plastic", "red", "sedan", 200);
+        Car car2 = new Car(199.9, "plastic", "black", "speedcar", 320);
+        Bear bear = new Bear(150.2, "fur", "black", 40.3);
+        Robot robot = new Robot(203.2, "metal", "yellow", "swim", 50.1);
+
+        TruckShop truckShop = new TruckShop();
+
+        truckShop.add(car, car2, bear, robot);
+        System.out.println("Search by color: " + Arrays.toString(Search.searchProductByColor(truckShop, "black")));
+
+        Basket basket = new Basket(4);
+        basket.add(0, car, car2, bear, robot);
+        System.out.println("Search by color: " + Arrays.toString(Search.searchProductByColorBasket(basket, "red")));
 
     }
 

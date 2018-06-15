@@ -1,8 +1,11 @@
 package by.epam.java.model.entity;
 
+import java.util.Objects;
+
 public class Bear extends Product {
 
     private double size;
+    private static final int PRIME_NUMBER = 31;
 
     public Bear(){
 
@@ -19,6 +22,25 @@ public class Bear extends Product {
 
     public void setSize(double size) {
         this.size = size;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        if (getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Bear bear = (Bear) o;
+        if (size != bear.size) return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+
+        int result = super.hashCode();
+        result = PRIME_NUMBER * result + (int)size;
+        return result;
     }
 
     @Override

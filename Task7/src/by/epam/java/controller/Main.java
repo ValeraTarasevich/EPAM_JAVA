@@ -6,8 +6,9 @@ public class Main {
 //        Creator.printMyBasket();
 //        Creator.printMyTruckShop();
 //        Creator.printMyTruckShopWithJCF();
-        Creator.sortProductByPice();
+//        Creator.sortProductByPrice();
 //       Creator.sortProductByPriceJCF();
+        Creator.serchProducts();
 
     }
 }
