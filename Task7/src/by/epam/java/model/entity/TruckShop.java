@@ -1,55 +1,83 @@
 package by.epam.java.model.entity;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class TruckShop {
 
-    private List<Product> list = new ArrayList<>();
+    private Product[] products;
+    private int size;
 
-    public void add(Product product){
-        list.add(product);
+    public TruckShop() {
+        products = new Product[size];
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public void add(Product... prod) {
-        list.addAll(Arrays.asList(prod));
+        int getSize = getSize();
+        size += prod.length;
+        products = Arrays.copyOf(products, size);
+        System.arraycopy(prod, 0, products, getSize, prod.length);
     }
+
 
     public void delete(int index){
-        list.remove(index);
+        if(index >= 0 && index < products.length){
+            products[index] = null;
+        }
+        else{
+            throw new NullPointerException("Incorrect index at delete");
+        }
     }
 
-    public int getSize(){
-        return list.size();
+    public void deleteAll() {
+        for (int i = 0; i < products.length; i++) {
+            if (getElement(i) != null) {
+                products[i] = null;
+            }
+        }
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public int countElement(){
+        int count = 0;
+        for (int i = 0; i < products.length; i++) {
+            if (getElement(i) != null) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public boolean isEmpty(){
-        return list.isEmpty();
-    }
-
-    public Product getElement(int index){
-        return list.get(index);
-    }
-
-    public void deleteAll(){
-        list.clear();
-    }
-
-    public List<Product> getList() {
-        return list;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder("\n");
-
-        for (Product product : list) {
-            if (list != null) {
-                builder.append(product.toString()).append("\n");
+        int count = 0;
+        for (int i = 0; i < getSize(); i++) {
+            if (getElement(i) == null) {
+                count++;
             }
         }
+        return count == getSize();
+    }
 
-        return builder.toString();
+    public Product getElement(int index) {
+        if (index >= 0 && index < products.length) {
+            return products[index];
+        }
+        throw new NullPointerException("Incorrect index at getElement");
+    }
+
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+        for (Product product1 : products) {
+            if (product1 != null)
+                str.append(product1.toString()).append('\n');
+        }
+        return str.toString();
+
     }
 }

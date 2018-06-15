@@ -15,15 +15,6 @@ public class Basket {
         return size;
     }
 
-    public void add(int index, Product prod) {
-        if (index >= 0 && index < products.length) {
-            products[index] = prod;
-        }
-        else {
-            throw new NullPointerException("Incorrect index at addition");
-        }
-    }
-
     public void add(int index, Product... prod) {
         for (Product aProd : prod) {
             if (index >= 0 && index < products.length) {
@@ -71,23 +62,6 @@ public class Basket {
         }
         return count == getSize();
     }
-
-//    public Product[] remove(Product symbols)
-//    {
-//        for (int i = 0; i < products.length; i++)
-//        {
-//            if (products[i] == symbols)
-//            {
-//                int size = products.length;
-//                Product[] copy = new Product[size-1];
-//                System.arraycopy(products, 0, copy, 0, i);
-//                System.arraycopy(products, i+1, copy, i, copy.length-i);
-//                return copy;
-//            }
-//        }
-//        return products;
-//    }
-
 
     public Product getElement(int index) {
         if (index >= 0 && index < products.length) {

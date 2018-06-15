@@ -1,11 +1,10 @@
 package by.epam.java.model.logic;
 
 import by.epam.java.model.entity.Basket;
-import by.epam.java.model.entity.Car;
-import by.epam.java.model.entity.Product;
 import by.epam.java.model.entity.TruckShop;
+import by.epam.java.model.entity.TruckShopWithJCF;
 
-public class BasketLogic {
+public class Logic {
 
     public static double getPriceProductsBasket(Basket basket){
         if (checkBasket(basket)){
@@ -45,8 +44,48 @@ public class BasketLogic {
         return min;
     }
 
-    public static double getPriceProductsTruck(TruckShop truck){
-        if (checkTruck(truck)){
+    public static double getPriceProductsTruck(TruckShop truckShop){
+        if (checkTruckShop(truckShop)){
+            return -1;
+        }
+        double sum = 0;
+        for (int i = 0; i < truckShop.getSize(); i++){
+            sum += truckShop.getElement(i).getPrice();
+        }
+        return sum;
+    }
+
+    public static double findMaxTruckShop(TruckShop truckShop){
+        double max = -1;
+        for (int i = 0; i < truckShop.getSize(); i++){
+            if (truckShop.getElement(i).getPrice() > max){
+                max = truckShop.getElement(i).getPrice();
+            }
+        }
+        return max;
+    }
+
+    private static boolean checkTruckShop(TruckShop truckShop){
+        return truckShop.getSize() == 0;
+    }
+
+    public static double findMinTruckShop(TruckShop truckShop){
+        if (checkTruckShop(truckShop)){
+            return -1;
+        }
+        double min = truckShop.getElement(0).getPrice();
+        for (int i = 1; i < truckShop.getSize(); i++){
+            if (truckShop.getElement(i).getPrice() < min){
+                min = truckShop.getElement(i).getPrice();
+            }
+        }
+        return min;
+    }
+
+
+
+    public static double getPriceProductsTruckJCF(TruckShopWithJCF truck){
+        if (checkTruckJCF(truck)){
             return -1;
         }
         double sum = 0;
@@ -56,7 +95,7 @@ public class BasketLogic {
         return sum;
     }
 
-    public static double findMaxTruck(TruckShop truck){
+    public static double findMaxTruckJCF(TruckShopWithJCF truck){
         double max = -1;
         for (int i = 0; i < truck.getSize(); i++){
             if (truck.getElement(i).getPrice() > max){
@@ -66,8 +105,8 @@ public class BasketLogic {
         return max;
     }
 
-    public static double findMinTruck(TruckShop truck){
-        if (checkTruck(truck)){
+    public static double findMinTruckJCF(TruckShopWithJCF truck){
+        if (checkTruckJCF(truck)){
             return -1;
         }
         double min = truck.getElement(0).getPrice();
@@ -79,9 +118,8 @@ public class BasketLogic {
         return min;
     }
 
-    private static boolean checkTruck(TruckShop truck){
+    private static boolean checkTruckJCF(TruckShopWithJCF truck){
         return truck.getSize() == 0;
     }
-
 
 }
