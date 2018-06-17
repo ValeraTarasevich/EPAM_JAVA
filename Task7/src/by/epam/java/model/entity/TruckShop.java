@@ -9,7 +9,7 @@ public class TruckShop {
     private Product[] products;
     private int size;
 
-    public TruckShop() {
+    public TruckShop(){
         products = new Product[size];
     }
 

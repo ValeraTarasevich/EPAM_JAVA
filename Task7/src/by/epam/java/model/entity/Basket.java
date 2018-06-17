@@ -9,8 +9,6 @@ public class Basket {
     private Product[] products;
     private int size;
 
-
-
     public Basket(int size) {
         this.size = size;
         products = new Product[this.size];

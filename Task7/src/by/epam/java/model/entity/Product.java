@@ -1,8 +1,5 @@
 package by.epam.java.model.entity;
 
-import java.util.Arrays;
-import java.util.Objects;
-
 public class Product {
 
     private static final int PRIME_NUMBER = 31;
