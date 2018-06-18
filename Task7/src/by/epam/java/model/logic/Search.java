@@ -1,10 +1,8 @@
 package by.epam.java.model.logic;
 
-import by.epam.java.model.entity.Basket;
+import by.epam.java.model.entity.Container.Basket;
 import by.epam.java.model.entity.Product;
-import by.epam.java.model.entity.TruckShop;
-
-import java.util.Arrays;
+import by.epam.java.model.entity.Container.TruckShop;
 
 public class Search {
 

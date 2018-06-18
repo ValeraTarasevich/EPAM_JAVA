@@ -1,4 +1,6 @@
-package by.epam.java.model.entity;
+package by.epam.java.model.entity.Container;
+
+import by.epam.java.model.entity.Product;
 
 import java.util.ArrayList;
 import java.util.Arrays;

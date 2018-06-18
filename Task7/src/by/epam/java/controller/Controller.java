@@ -1,6 +1,8 @@
 package by.epam.java.controller;
 
-import by.epam.java.model.entity.*;
+import by.epam.java.model.entity.Container.Basket;
+import by.epam.java.model.entity.Container.TruckShop;
+import by.epam.java.model.entity.Container.TruckShopWithJCF;
 import by.epam.java.util.Generator;
 import by.epam.java.model.logic.*;
 import java.util.Arrays;

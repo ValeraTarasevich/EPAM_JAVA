@@ -1,8 +1,8 @@
 package by.epam.java.util;
 
-import by.epam.java.model.entity.Basket;
-import by.epam.java.model.entity.TruckShop;
-import by.epam.java.model.entity.TruckShopWithJCF;
+import by.epam.java.model.entity.Container.Basket;
+import by.epam.java.model.entity.Container.TruckShop;
+import by.epam.java.model.entity.Container.TruckShopWithJCF;
 
 public class Generator {
 
