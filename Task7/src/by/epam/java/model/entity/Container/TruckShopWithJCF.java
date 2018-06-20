@@ -1,4 +1,4 @@
-package by.epam.java.model.entity.Container;
+package by.epam.java.model.entity.container;
 
 import by.epam.java.model.entity.Product;
 

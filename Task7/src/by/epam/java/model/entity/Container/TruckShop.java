@@ -1,32 +1,49 @@
-package by.epam.java.model.entity.Container;
+package by.epam.java.model.entity.container;
 
 import by.epam.java.model.entity.Product;
 
 import java.util.Arrays;
-import java.util.Objects;
 
-public class TruckShop {
+public class TruckShop implements CollectionAble{
 
     private static final int PRIME_NUMBER = 31;
+    private static final int DEFAULT_SIZE = 0;
+
     private Product[] products;
-    private int size;
 
     public TruckShop(){
-        products = new Product[size];
+        products = new Product[DEFAULT_SIZE];
     }
-
+    @Override
     public int getSize() {
-        return size;
+        return products.length;
     }
 
-    public void add(Product... prod) {
-        int getSize = getSize();
-        size += prod.length;
-        products = Arrays.copyOf(products, size);
-        System.arraycopy(prod, 0, products, getSize, prod.length);
+//    public void addAll(Product... prod) {
+//        int getSize = getSize();
+//        size += prod.length;
+//        products = Arrays.copyOf(products, size);
+//        System.arraycopy(prod, 0, products, getSize, prod.length);
+//    }
+//
+
+    public void add(int index, Product... products) {
+        try {
+            if (index<0 || index>this.products.length){
+                throw new NullPointerException();
+            }
+            Product[] tail = new Product[this.getSize()-index];
+            System.arraycopy(this.products, index, tail, 0, tail.length);
+            this.products = Arrays.copyOf(this.products, this.products.length+products.length);
+            System.arraycopy(products, 0, this.products, index, products.length);
+            System.arraycopy(tail, 0, this.products, index+products.length, tail.length);
+        } catch (Exception ex){
+            System.out.println(ex);
+        }
+
     }
 
-
+    @Override
     public void delete(int index){
         if(index >= 0 && index < products.length){
             products[index] = null;
@@ -35,7 +52,7 @@ public class TruckShop {
             throw new NullPointerException("Incorrect index at delete");
         }
     }
-
+    @Override
     public void deleteAll() {
         for (int i = 0; i < products.length; i++) {
             if (getElement(i) != null) {
@@ -43,11 +60,7 @@ public class TruckShop {
             }
         }
     }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
+    @Override
     public int countElement(){
         int count = 0;
         for (int i = 0; i < products.length; i++) {
@@ -57,7 +70,7 @@ public class TruckShop {
         }
         return count;
     }
-
+    @Override
     public boolean isEmpty(){
         int count = 0;
         for (int i = 0; i < getSize(); i++) {
@@ -67,7 +80,7 @@ public class TruckShop {
         }
         return count == getSize();
     }
-
+    @Override
     public Product getElement(int index) {
         if (index >= 0 && index < products.length) {
             return products[index];
@@ -81,14 +94,14 @@ public class TruckShop {
         if (o == null) return false;
         if (getClass() != o.getClass()) return false;
         TruckShop truckShop = (TruckShop) o;
-        return size == truckShop.size &&
+        return this.getSize() == truckShop.getSize() &&
                 Arrays.equals(products, truckShop.products);
     }
 
     @Override
     public int hashCode() {
 
-        int result = Objects.hash(size);
+        int result = 1;
         result = PRIME_NUMBER * result + Arrays.hashCode(products);
         return result;
     }

@@ -1,88 +1,47 @@
 package by.epam.java.model.logic;
 
-import by.epam.java.model.entity.Container.Basket;
-import by.epam.java.model.entity.Container.TruckShop;
-import by.epam.java.model.entity.Container.TruckShopWithJCF;
+import by.epam.java.model.entity.container.CollectionAble;
+import by.epam.java.model.entity.container.TruckShopWithJCF;
 
 public class Logic {
 
-    public static double getPriceProductsBasket(Basket basket){
-        if (checkBasket(basket)){
+    public static double getPriceProducts(CollectionAble collec){
+        if (checkCollection(collec)){
             return -1;
         }
         double sum = 0;
-        for (int i = 0; i < basket.getSize(); i++){
-            sum += basket.getElement(i).getPrice();
+        for (int i = 0; i < collec.getSize(); i++){
+            sum += collec.getElement(i).getPrice();
         }
         return sum;
     }
 
-    public static double findMax(Basket basket){
+    public static double findMax(CollectionAble collec){
         double max = -1;
-        for (int i = 0; i < basket.getSize(); i++){
-            if (basket.getElement(i).getPrice() > max){
-                max = basket.getElement(i).getPrice();
+        for (int i = 0; i < collec.getSize(); i++){
+            if (collec.getElement(i).getPrice() > max){
+                max = collec.getElement(i).getPrice();
             }
         }
         return max;
     }
 
-    private static boolean checkBasket(Basket basket){
-        return basket.getSize() == 0;
+    private static boolean checkCollection(CollectionAble collec){
+        return collec.getSize() == 0;
     }
 
-    public static double findMin(Basket basket){
-        if (checkBasket(basket)){
+    public static double findMin(CollectionAble collec){
+        if (checkCollection(collec)){
             return -1;
         }
-        double min = basket.getElement(0).getPrice();
-        for (int i = 1; i < basket.getSize(); i++){
-            if (basket.getElement(i).getPrice() < min){
-                min = basket.getElement(i).getPrice();
+        double min = collec.getElement(0).getPrice();
+        for (int i = 1; i < collec.getSize(); i++){
+            if (collec.getElement(i).getPrice() < min){
+                min = collec.getElement(i).getPrice();
             }
         }
         return min;
     }
-
-    public static double getPriceProductsTruck(TruckShop truckShop){
-        if (checkTruckShop(truckShop)){
-            return -1;
-        }
-        double sum = 0;
-        for (int i = 0; i < truckShop.getSize(); i++){
-            sum += truckShop.getElement(i).getPrice();
-        }
-        return sum;
-    }
-
-    public static double findMaxTruckShop(TruckShop truckShop){
-        double max = -1;
-        for (int i = 0; i < truckShop.getSize(); i++){
-            if (truckShop.getElement(i).getPrice() > max){
-                max = truckShop.getElement(i).getPrice();
-            }
-        }
-        return max;
-    }
-
-    private static boolean checkTruckShop(TruckShop truckShop){
-        return truckShop.getSize() == 0;
-    }
-
-    public static double findMinTruckShop(TruckShop truckShop){
-        if (checkTruckShop(truckShop)){
-            return -1;
-        }
-        double min = truckShop.getElement(0).getPrice();
-        for (int i = 1; i < truckShop.getSize(); i++){
-            if (truckShop.getElement(i).getPrice() < min){
-                min = truckShop.getElement(i).getPrice();
-            }
-        }
-        return min;
-    }
-
-
 
     public static double getPriceProductsTruckJCF(TruckShopWithJCF truck){
         if (checkTruckJCF(truck)){

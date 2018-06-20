@@ -1,8 +1,9 @@
 package by.epam.java.controller;
 
-import by.epam.java.model.entity.Container.Basket;
-import by.epam.java.model.entity.Container.TruckShop;
-import by.epam.java.model.entity.Container.TruckShopWithJCF;
+import by.epam.java.model.entity.container.Basket;
+import by.epam.java.model.entity.container.CollectionAble;
+import by.epam.java.model.entity.container.TruckShop;
+import by.epam.java.model.entity.container.TruckShopWithJCF;
 import by.epam.java.util.Generator;
 import by.epam.java.model.logic.*;
 import java.util.Arrays;
@@ -18,7 +19,7 @@ public class Controller {
 
     public static void functionBasket(){
 
-        Basket basket;
+        CollectionAble basket;
         basket = Generator.generateBasket(cCar, cBear, cRobot);
 
         if (basket.isEmpty()){
@@ -26,10 +27,10 @@ public class Controller {
             return;
         }
 
-        printBasket(basket);
+        printCollection(basket);
 
         printConsole("Size basket: " + basket.getSize());
-        printfConsole("Sum price: ", Logic.getPriceProductsBasket(basket));
+        printfConsole("Sum price: ", Logic.getPriceProducts(basket));
         printConsole("\nMax price: " + Logic.findMax(basket));
         printConsole("Min price: " + Logic.findMin(basket));
         try {
@@ -62,21 +63,20 @@ public class Controller {
 
     public static void functionTruckShop(){
 
-        TruckShop truckShop;
-        truckShop = Generator.generateTruckShop(cCar, cBear, cRobot);
+        CollectionAble truckShop = Generator.generateTruckShop(cCar, cBear, cRobot);
 
         if (truckShop.isEmpty()){
             printConsole("TruckShop is empty!!!");
             return;
         }
 
-        printTruck(truckShop);
+        printCollection(truckShop);
 
         printConsole("Size: " + truckShop.getSize());
 
-        printfConsole("Sum price: ", Logic.getPriceProductsTruck(truckShop));
-        printConsole("\nMax price: " + Logic.findMaxTruckShop(truckShop));
-        printConsole("Min price: " + Logic.findMinTruckShop(truckShop));
+        printfConsole("Sum price: ", Logic.getPriceProducts(truckShop));
+        printConsole("\nMax price: " + Logic.findMax(truckShop));
+        printConsole("Min price: " + Logic.findMin(truckShop));
         try {
             printConsole("\nPrint certain product with index: \n" + truckShop.getElement(1));
         }
@@ -101,7 +101,7 @@ public class Controller {
 
     public static void sortProductsByPrice() {
 
-        TruckShop truckShop;
+        CollectionAble truckShop;
         truckShop = Generator.generateTruckShop(cCar, cBear, cRobot);
 
         if (truckShop.isEmpty()){
@@ -109,10 +109,10 @@ public class Controller {
             return;
         }
 
-        printTruck(truckShop);
-        printConsole("Sort not Fixed by price: " + Arrays.toString(Sort.sortTruckForPrice(truckShop)) + "\n");
+        printCollection(truckShop);
+        printConsole("Sort not Fixed by price: " + Arrays.toString(Sort.sortForPrice(truckShop)) + "\n");
 
-        Basket basket;
+        CollectionAble basket;
         basket = Generator.generateBasket(cCar, cBear, cRobot);
 
         if (basket.isEmpty()){
@@ -120,20 +120,20 @@ public class Controller {
             return;
         }
 
-        printBasket(basket);
-        printConsole("Sort Fixed by price: " + Arrays.toString(Sort.sortBasketForPrice(basket)) + "\n");
+        printCollection(basket);
+        printConsole("Sort Fixed by price: " + Arrays.toString(Sort.sortForPrice(basket)) + "\n");
     }
 
     public static void searchProducts(){
-        TruckShop truckShop;
+        CollectionAble truckShop;
         truckShop = Generator.generateTruckShop(cCar, cBear, cRobot);
-        printTruck(truckShop);
+        printCollection(truckShop);
         printConsole("Search by color: " + Arrays.toString(Search.searchProductByColor(truckShop, "black")));
 
-        Basket basket;
+        CollectionAble basket;
         basket = Generator.generateBasket(cCar, cBear, cRobot);
-        printBasket(basket);
-        printConsole("Search by color: " + Arrays.toString(Search.searchProductByColorBasket(basket, "red")));
+        printCollection(basket);
+        printConsole("Search by color: " + Arrays.toString(Search.searchProductByColor(basket, "red")));
     }
 
     public static void functionTruckShopWithJCF() {

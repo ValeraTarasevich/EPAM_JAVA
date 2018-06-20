@@ -1,21 +1,25 @@
-package by.epam.java.model.entity.Container;
+package by.epam.java.model.entity.container;
 
 import by.epam.java.model.entity.Product;
 
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Basket {
+public class Basket implements CollectionAble{
 
     private static final int PRIME_NUMBER = 31;
     private Product[] products;
     private int size;
 
+    public Basket(){
+
+    }
+
     public Basket(int size) {
         this.size = size;
         products = new Product[this.size];
     }
-
+    @Override
     public int getSize() {
         return size;
     }
@@ -30,7 +34,7 @@ public class Basket {
             }
         }
     }
-
+    @Override
     public void delete(int index){
         if(index >= 0 && index < products.length){
             products[index] = null;
@@ -39,7 +43,7 @@ public class Basket {
             throw new NullPointerException("Incorrect index at delete");
         }
     }
-
+    @Override
     public void deleteAll() {
         for (int i = 0; i < products.length; i++) {
             if (getElement(i) != null) {
@@ -47,7 +51,7 @@ public class Basket {
             }
         }
     }
-
+    @Override
     public int countElement(){
         int count = 0;
         for (int i = 0; i < products.length; i++) {
@@ -57,7 +61,7 @@ public class Basket {
         }
         return count;
     }
-
+    @Override
     public boolean isEmpty(){
         int count = 0;
         for (int i = 0; i < getSize(); i++) {
@@ -67,7 +71,7 @@ public class Basket {
         }
         return count == getSize();
     }
-
+    @Override
     public Product getElement(int index) {
         if (index >= 0 && index < products.length) {
             return products[index];
@@ -88,7 +92,8 @@ public class Basket {
     @Override
     public int hashCode() {
 
-        int result = Objects.hash(size);
+        int result = 1;
+        result = PRIME_NUMBER * result + size;
         result = PRIME_NUMBER * result + Arrays.hashCode(products);
         return result;
     }
