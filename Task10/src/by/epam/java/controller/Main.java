@@ -23,6 +23,10 @@ public class Main {
         int numberFib = 4;
         System.out.println("Fibonachi: " + rec.fibonachi(numberFib));
 
+        int numTower = 3;
+        System.out.println("Count move by Tower of Hanoi: " + rec.countMove(numTower));
+        System.out.println("Tower of Hanoi: " + rec.towerOfHanoi(numTower, "A", "C", "B"));
+
     }
 }
 

@@ -4,10 +4,6 @@ public class Recursion {
 
     private static final int DIVIDER = 10;
     private static final int MAX_SINGLE_DIGIT = 10;
-    private static final int LIMIT_NUMBER_2 = 2;
-    private static final int STEP_BY_FIRST = 1;
-    private static final int STEP_BY_SECOND = 2;
-
 
     public int sumNumber(int number) {
         int tmp;
@@ -54,6 +50,11 @@ public class Recursion {
     }
 
     public int fibonachi(int number){
+
+        final int LIMIT_NUMBER_2 = 2;
+        final int STEP_BY_FIRST = 1;
+        final int STEP_BY_SECOND = 2;
+
         if (number <= 0){
             return -1;
         }
@@ -63,6 +64,28 @@ public class Recursion {
 
         return fibonachi(number - STEP_BY_FIRST) + fibonachi(number - STEP_BY_SECOND);
     }
+
+    public int countMove(int count){
+        final int MULTIPLIER = 2;
+
+        if (count == 1){
+            return 1;
+        }
+
+        return countMove(count - 1) * MULTIPLIER + 1;
+    }
+
+    public String towerOfHanoi(int count, String first, String time, String base){
+
+        if (count == 1){
+            return count + ": " + first + "-->" + base;
+        }
+
+        return "\n" + towerOfHanoi(count - 1, first, base, time) + "\n"
+                + count + ": " + first + "-->" + base + "\n"
+                + towerOfHanoi(count - 1, time, first, base);
+    }
+
 
 }
 
