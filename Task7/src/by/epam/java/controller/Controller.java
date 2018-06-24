@@ -110,7 +110,9 @@ public class Controller {
         }
 
         printCollection(truckShop);
-        printConsole("Sort not Fixed by price: " + Arrays.toString(Sort.sortForPrice(truckShop)) + "\n");
+        printConsole("Sort not Fixed by price (bubble): " + Arrays.toString(Sort.sortForPrice(truckShop)));
+        printConsole("Sort not Fixed by price (insert): " + Arrays.toString(Sort.sortByPriceInsert(truckShop)));
+        printConsole("Sort not Fixed by price (select): " + Arrays.toString(Sort.sortByPriceSelect(truckShop)) + "\n");
 
         CollectionAble basket;
         basket = Generator.generateBasket(cCar, cBear, cRobot);
@@ -121,7 +123,9 @@ public class Controller {
         }
 
         printCollection(basket);
-        printConsole("Sort Fixed by price: " + Arrays.toString(Sort.sortForPrice(basket)) + "\n");
+        printConsole("Sort Fixed by price (bubble): " + Arrays.toString(Sort.sortForPrice(basket)));
+        printConsole("Sort Fixed by price (insert): " + Arrays.toString(Sort.sortByPriceInsert(basket)));
+        printConsole("Sort Fixed by price (select): " + Arrays.toString(Sort.sortByPriceSelect(basket)) + "\n");
     }
 
     public static void searchProducts(){
